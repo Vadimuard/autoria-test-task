@@ -17,8 +17,9 @@ const extractPrimitiveFromStr = (value) => {
 const transformKeyValue = (keyValue) => {
   let [path, value] = keyValue.split("=");
   if (!value) return [null, null];
-  if (value[0] === '"' && value[value.length - 1] === '"') {
-    value = value.split('"')[1];
+  const valueParts = value.split('"');
+  if (valueParts.length > 1) {
+    value = valueParts[1];
   } else {
     value = extractPrimitiveFromStr(value);
   }
@@ -42,12 +43,12 @@ const parseQuery = (url) => {
   if (!queryStr) return null;
 
   const keyValues = queryStr.split("&");
-  const query = {};
+  const result = {};
   for (const kv of keyValues) {
     const [path, value] = transformKeyValue(kv);
-    if (value !== null) setNestedValue(query, path, value);
+    if (value !== null) setNestedValue(result, path, value);
   }
-  return query;
+  return result;
 };
 
 module.exports = parseQuery;
