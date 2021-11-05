@@ -1,0 +1,27 @@
+{
+  "name": "searchstring",
+  "version": "1.0.0",
+  "description": "Test task 4 junior Nodejs developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpolischuk/test_task2.git"
+  },
+  "keywords": [
+    "test",
+    "node"
+  ],
+  "author": "kpolischuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpolischuk/test_task2/issues"
+  },
+  "homepage": "https://github.com/kpolischuk/test_task2#readme",
+  "dependencies": {
+    "jest": "^27.3.1"
+  }
+}
